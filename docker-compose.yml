@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  api:
+    image: api-ixp
+    user: "${UID}:${GID}" # Linux users.
+    ports:
+      - 3001:3001
+
+  client:
+    image: nginx:1.21.6-alpine
+    user: "${UID}:${GID}" # Linux users.
+    depends_on:
+      - api
+    volumes: 
+      - ./client:/usr/share/nginx/html:ro
+    ports:
+      - 3000:80
