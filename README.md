@@ -18,7 +18,7 @@ docker-compose down
 ```
 For run the `TESTS`,&nbsp; it is necessary that the server is up.
 ```sh
-docker exec -it ixpandit_api_1 python3 test.py
+docker exec -it api_ipx python3 test.py
 ```
 ### Requeriments
 

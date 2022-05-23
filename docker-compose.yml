@@ -3,11 +3,13 @@ version: "3"
 services:
   api:
     image: jsilva723/api-ixp:v2
+    container_name: api_ipx
     ports:
       - 3001:3001
 
   client:
     image: nginx:1.21.6-alpine
+    container_name: client_ixp
     depends_on:
       - api
     volumes: 
