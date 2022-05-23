@@ -1,4 +1,3 @@
-from logging import exception
 from flask import Flask, jsonify
 from flask_cors import CORS
 from flask_caching import Cache
@@ -16,7 +15,7 @@ BASE_URL  = 'https://pokeapi.co/api/v2/pokemon'
 BASE_URL_IMG = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'
 
 config = {
-  "DEBUG": True,          # some Flask specific configs
+  "DEBUG": False,          # some Flask specific configs
   "CACHE_TYPE": "SimpleCache",  # Flask-Caching related configs
   "CACHE_DEFAULT_TIMEOUT": 3600
 }
@@ -70,11 +69,6 @@ def filter(name):
   items = json.loads(r.data)
   return jsonify([x for x in items if x.get('name').find(name) != -1])
 
-
 if __name__ == '__main__':
   app.run(host=HOST, port=PORT)
   print('Server running in port %s' %(PORT))
-
-
-
-

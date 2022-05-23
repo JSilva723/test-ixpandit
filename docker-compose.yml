@@ -2,14 +2,12 @@ version: "3"
 
 services:
   api:
-    image: api-ixp
-    user: "${UID}:${GID}" # Linux users.
+    image: jsilva723/api-ixp:v2
     ports:
       - 3001:3001
 
   client:
     image: nginx:1.21.6-alpine
-    user: "${UID}:${GID}" # Linux users.
     depends_on:
       - api
     volumes: 
