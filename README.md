@@ -4,7 +4,7 @@ This app search, Pokemons by name of Poke-API.
 
 ## Get started
 
-After cloning the repository on your computer.
+After cloning the repository on your computer, go to the directory where the `docker-compose.yml` file is located
 
 For `START`,&nbsp; you should run
 ```sh
